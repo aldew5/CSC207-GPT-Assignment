@@ -10,7 +10,7 @@ public class Main {
             @Override
             public void run() {
                 PromptView promptView = new PromptView();
-                promptView.showPrompt();
+                promptView.setVisible(true);
             }
         });
     }
