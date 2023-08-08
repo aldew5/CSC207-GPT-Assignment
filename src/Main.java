@@ -1,7 +1,4 @@
 import main.java.ui.PromptView;
-import main.java.ui.SwingUIComponentFactory;
-import main.java.ui.UIComponentFactory;
-
 import javax.swing.*;
 
 public class Main {
