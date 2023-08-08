@@ -4,7 +4,20 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
+/**
+ * Utility class for playing audio files.
+ */
 public class AudioPlayer {
+
+    /**
+     * Plays an audio file located at the specified file path.
+     *
+     * @param filePath The path to the audio file to be played.
+     */
     public static void playAudio(String filePath) {
         try {
             File audioFile = new File(filePath);

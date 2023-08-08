@@ -1,5 +1,8 @@
 package main.java.datastructure;
 
+/**
+ * A class that implements the Heap Sort algorithm for sorting an array of integers.
+ */
 public class HeapSort implements SortingStrategy {
 
     @Override
