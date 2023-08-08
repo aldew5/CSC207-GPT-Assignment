@@ -2,16 +2,15 @@ package main.java.ui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import main.java.datastructure.MaxBinaryHeap;
 import main.java.datastructure.PriorityQueue;
-import main.java.use_case.IncreaseKeyUseCase;
-import main.java.use_case.SortInputUseCase;
-import main.java.use_case.StoreInPriorityQueueUseCase;
+import main.java.ui.handlers.IncreaseKeyClickHandler;
+import main.java.ui.handlers.QueueClickHandler;
+import main.java.ui.handlers.SortClickHandler;
+import main.java.ui.handlers.SubmitClickHandler;
 import main.java.util.*;
 
 public class PromptView extends JFrame{
@@ -63,19 +62,11 @@ public class PromptView extends JFrame{
         add(buttonPanel, BorderLayout.SOUTH);
     }
 
-    protected void clearInputField() {
+    public void clearInputField() {
             textField.setText("");
         }
 
-    private void onQueueClicked(ActionEvent e) {
-        PriorityQueue priorityQueue = new PriorityQueue(inputList.size());
-        StoreInPriorityQueueUseCase queueUseCase = new StoreInPriorityQueueUseCase(priorityQueue);
-        int[] inputArray = convertListToArray(inputList);
-        queueUseCase.storeInPriorityQueue(inputArray);
-        showResults("Priority Queue (max heap) contents:", priorityQueue);
-    }
-
-    protected int[] convertListToArray(List<Integer> list) {
+    public int[] convertListToArray(List<Integer> list) {
         int[] arr = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             arr[i] = list.get(i);
@@ -83,27 +74,18 @@ public class PromptView extends JFrame{
         return arr;
     }
 
-    protected void disableSubmitButton() {
+    public void disableElements() {
         submitButton.setEnabled(false);
-    }
-
-    protected void disableInputField() {
         textField.setEnabled(false);
-    }
-
-    protected void enableSortButton() {
         sortButton.setEnabled(true);
-    }
-
-    protected void enableQueueButton() {
         queueButton.setEnabled(true);
     }
 
-    protected void showAlert(String title, String message) {
+    public void showAlert(String title, String message) {
         JOptionPane.showMessageDialog(this, message, title, JOptionPane.ERROR_MESSAGE);
     }
 
-    void showResults(String title, int[] array) {
+    public void showResults(String title, int[] array) {
         StringBuilder result = new StringBuilder(title + "\n");
         for (int num : array) {
             result.append(num).append(" ");
@@ -111,7 +93,7 @@ public class PromptView extends JFrame{
         JOptionPane.showMessageDialog(this, result.toString());
     }
 
-    void showResults(String title, PriorityQueue priorityQueue) {
+    public void showResults(String title, PriorityQueue priorityQueue) {
         StringBuilder result = new StringBuilder(title + "\n");
         while (!priorityQueue.isEmpty()) {
             result.append(priorityQueue.dequeue()).append(" ");
@@ -119,28 +101,12 @@ public class PromptView extends JFrame{
         JOptionPane.showMessageDialog(this, result.toString());
     }
 
-    private void onIncreaseKeyClicked(ActionEvent e) {
-        int index = promptIndex(); // Prompt the user for the index
-        int newValue = promptNewValue(); // Prompt the user for the new value
-
-        try {
-            IncreaseKeyUseCase increaseKeyUseCase = new IncreaseKeyUseCase(maxBinaryHeap);
-            increaseKeyUseCase.increaseKey(index, newValue);
-
-            inputList.set(index, newValue);
-            showResults("Key increased at index " + index + " to " + newValue, convertListToArray(inputList));
-        } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
-            showAlert("Invalid input", "Invalid index or new value.");
-        }
-    }
-
-
-    protected int promptIndex() {
+    public int promptIndex() {
         String indexText = JOptionPane.showInputDialog(this, "Enter index to increase key:");
         return Integer.parseInt(indexText);
     }
 
-    protected int promptNewValue() {
+    public int promptNewValue() {
         String newValueText = JOptionPane.showInputDialog(this, "Enter new value:");
         return Integer.parseInt(newValueText);
     }

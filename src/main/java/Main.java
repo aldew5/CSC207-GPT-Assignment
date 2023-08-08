@@ -1,3 +1,5 @@
+package main.java;
+
 import main.java.ui.PromptView;
 import javax.swing.*;
 

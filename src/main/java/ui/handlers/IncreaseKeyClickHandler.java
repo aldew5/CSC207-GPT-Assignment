@@ -1,10 +1,12 @@
-package main.java.ui;
+package main.java.ui.handlers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import main.java.ui.PromptView;
 import main.java.use_case.IncreaseKeyUseCase;
+
+import javax.swing.*;
 
 public class IncreaseKeyClickHandler implements ActionListener {
 

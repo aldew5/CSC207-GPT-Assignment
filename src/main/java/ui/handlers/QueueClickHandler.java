@@ -1,9 +1,10 @@
-package main.java.ui;
+package main.java.ui.handlers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import main.java.datastructure.PriorityQueue;
+import main.java.ui.PromptView;
 import main.java.use_case.StoreInPriorityQueueUseCase;
 
 public class QueueClickHandler implements ActionListener {

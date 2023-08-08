@@ -1,4 +1,6 @@
-package main.java.ui;
+package main.java.ui.handlers;
+
+import main.java.ui.PromptView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +22,7 @@ public class SubmitClickHandler implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String inputText = textField.getText();
         if (inputText.equalsIgnoreCase("done")) {
-            promptView.disableSubmitButton();
-            promptView.disableInputField();
-            promptView.enableSortButton();
-            promptView.enableQueueButton();
+            promptView.disableElements();
         } else {
             List<String> inputTokens = Arrays.asList(inputText.split(","));
             for (String token : inputTokens) {
@@ -39,4 +38,5 @@ public class SubmitClickHandler implements ActionListener {
             promptView.clearInputField();
         }
     }
+
 }
