@@ -18,3 +18,13 @@ the buttons triggers an audio file to ensure accessiblity for deaf persons.
   <li>Builder: ButtonPanelBuilder in util constructs the button panel used in PromptView</li>
   <li>Strategy: SortStrategy uses strategy design pattern</li>
 </ul>
+
+<h2>Program Specifications</h2>
+<ul>
+  <li>Java version: Java 11</li>
+  <li>Testing framework: Maven</li>
+  <li>
+    There are no notable code smells other than perhaps the long PromptView class. We adhere to SOLID and CA but 
+    don't include intermediate layers of abstraction (input boundaries etc.).
+  </li>
+</ul>
