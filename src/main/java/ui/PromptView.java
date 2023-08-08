@@ -9,6 +9,7 @@ import java.util.List;
 
 import main.java.datastructure.MaxBinaryHeap;
 import main.java.datastructure.PriorityQueue;
+import main.java.use_case.IncreaseKeyUseCase;
 import main.java.use_case.SortInputUseCase;
 import main.java.use_case.StoreInPriorityQueueUseCase;
 import main.java.util.BuildView;
@@ -156,13 +157,16 @@ public class PromptView extends JFrame{
         int newValue = promptNewValue(); // Prompt the user for the new value
 
         try {
-            maxBinaryHeap.increaseKey(index, newValue);
+            IncreaseKeyUseCase increaseKeyUseCase = new IncreaseKeyUseCase(maxBinaryHeap);
+            increaseKeyUseCase.increaseKey(index, newValue);
+
             inputList.set(index, newValue);
             showResults("Key increased at index " + index + " to " + newValue, convertListToArray(inputList));
         } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
             showAlert("Invalid input", "Invalid index or new value.");
         }
     }
+
 
     private int promptIndex() {
         String indexText = JOptionPane.showInputDialog(this, "Enter index to increase key:");
