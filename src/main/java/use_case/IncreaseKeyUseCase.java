@@ -1,6 +1,6 @@
-package main.java.use_case;
+package use_case;
 
-import main.java.datastructure.MaxBinaryHeap;
+import datastructure.MaxBinaryHeap;
 
 /**
  * Represents the use case for increasing a key in a max binary heap.

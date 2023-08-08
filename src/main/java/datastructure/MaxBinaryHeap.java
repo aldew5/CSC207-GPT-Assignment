@@ -1,4 +1,4 @@
-package main.java.datastructure;
+package datastructure;
 
 /**
  * A simple Java implementation of a max binary heap.
@@ -188,4 +188,6 @@ public class MaxBinaryHeap {
 
         heap[index] = newValue;
     }
+
+
 }

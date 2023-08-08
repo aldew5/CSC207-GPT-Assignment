@@ -1,4 +1,4 @@
-package main.java.datastructure;
+package datastructure;
 
 /**
  * A class that implements the Heap Sort algorithm for sorting an array of integers.

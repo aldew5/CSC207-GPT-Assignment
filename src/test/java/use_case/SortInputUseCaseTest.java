@@ -1,4 +1,4 @@
-package test.java;
+package use_case;
 
 import main.java.use_case.SortInputUseCase;
 import org.junit.jupiter.api.Test;

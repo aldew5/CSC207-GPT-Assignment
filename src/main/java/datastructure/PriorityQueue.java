@@ -1,4 +1,4 @@
-package main.java.datastructure;
+package datastructure;
 
 /**
  * A simple priority queue data structure implemented using a max binary heap.

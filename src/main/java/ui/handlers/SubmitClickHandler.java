@@ -1,14 +1,13 @@
-package main.java.ui.handlers;
+package ui.handlers;
 
-import main.java.ui.PromptView;
-import main.java.util.AudioPlayer;
+import ui.PromptView;
+import util.AudioPlayer;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
-
-import javax.swing.JTextField;
 /**
  * ActionListener implementation for the "Submit List" button.
  * This class handles the logic for processing the user input and updating the UI.

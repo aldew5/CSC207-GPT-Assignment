@@ -1,6 +1,6 @@
-package main.java.use_case;
+package use_case;
 
-import main.java.datastructure.HeapSort;
+import datastructure.HeapSort;
 
 
 public class SortInputUseCase {

@@ -1,11 +1,11 @@
-package main.java.ui.handlers;
+package ui.handlers;
+
+import ui.PromptView;
+import use_case.SortInputUseCase;
+import util.AudioPlayer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import main.java.ui.PromptView;
-import main.java.use_case.SortInputUseCase;
-import main.java.util.AudioPlayer;
 
 /**
  * ActionListener implementation for the "Sort List" button.

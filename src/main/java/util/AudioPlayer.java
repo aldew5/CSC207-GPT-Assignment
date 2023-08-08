@@ -1,8 +1,4 @@
-package main.java.util;
-
-import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
+package util;
 
 import javax.sound.sampled.*;
 import java.io.File;

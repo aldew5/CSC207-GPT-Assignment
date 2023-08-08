@@ -1,12 +1,12 @@
-package main.java.ui.handlers;
+package ui.handlers;
+
+import datastructure.PriorityQueue;
+import ui.PromptView;
+import use_case.StoreInPriorityQueueUseCase;
+import util.AudioPlayer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import main.java.datastructure.PriorityQueue;
-import main.java.ui.PromptView;
-import main.java.use_case.StoreInPriorityQueueUseCase;
-import main.java.util.AudioPlayer;
 
 /**
  * ActionListener implementation for the "Priority Order List" button.

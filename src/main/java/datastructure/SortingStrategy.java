@@ -1,4 +1,4 @@
-package main.java.datastructure;
+package datastructure;
 
 /**
  * The SortingStrategy interface defines a contract for sorting algorithms.

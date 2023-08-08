@@ -1,6 +1,6 @@
 package main.java;
 
-import main.java.ui.PromptView;
+import ui.PromptView;
 import javax.swing.*;
 
 /**

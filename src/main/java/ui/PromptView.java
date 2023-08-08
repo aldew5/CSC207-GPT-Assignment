@@ -1,17 +1,17 @@
-package main.java.ui;
+package ui;
+
+import datastructure.MaxBinaryHeap;
+import datastructure.PriorityQueue;
+import ui.handlers.IncreaseKeyClickHandler;
+import ui.handlers.QueueClickHandler;
+import ui.handlers.SortClickHandler;
+import ui.handlers.SubmitClickHandler;
+import util.ButtonPanelBuilder;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import main.java.datastructure.MaxBinaryHeap;
-import main.java.datastructure.PriorityQueue;
-import main.java.ui.handlers.IncreaseKeyClickHandler;
-import main.java.ui.handlers.QueueClickHandler;
-import main.java.ui.handlers.SortClickHandler;
-import main.java.ui.handlers.SubmitClickHandler;
-import main.java.util.ButtonPanelBuilder;
 
 /**
  * The main user interface for the application.
@@ -175,5 +175,13 @@ public class PromptView extends JFrame {
      */
     public MaxBinaryHeap getMaxBinaryHeap() {
         return maxBinaryHeap;
+    }
+    /**
+     * Returns the text field
+     *
+     * @return The text field
+     */
+    public JTextField getTextField() {
+        return textField;
     }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/gptgen.iml" filepath="$PROJECT_DIR$/gptgen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hi.iml" filepath="$PROJECT_DIR$/.idea/modules/hi.iml" />
     </modules>
   </component>
 </project>

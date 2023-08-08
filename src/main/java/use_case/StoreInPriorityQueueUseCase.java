@@ -1,6 +1,6 @@
-package main.java.use_case;
+package use_case;
 
-import main.java.datastructure.PriorityQueue;
+import datastructure.PriorityQueue;
 
 /**
  * Use case class for storing an array of integers in a priority queue.
