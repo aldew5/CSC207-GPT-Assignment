@@ -27,7 +27,4 @@ the buttons triggers an audio file to ensure accessiblity for deaf persons.
     There are no notable code smells other than perhaps the long PromptView class. We adhere to SOLID and CA but 
     don't include intermediate layers of abstraction (input boundaries etc.).
   </li>
-  <li>NOTE: I had to distill my ChatGPT conversation into the essential points because the original document
-    was 147 pages long -- the extension hung for 1 hour before I decided it wouldn't be able to download it.
-  </li>
 </ul>
