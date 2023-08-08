@@ -12,7 +12,7 @@ import main.java.datastructure.PriorityQueue;
 import main.java.use_case.IncreaseKeyUseCase;
 import main.java.use_case.SortInputUseCase;
 import main.java.use_case.StoreInPriorityQueueUseCase;
-import main.java.util.BuildView;
+import main.java.util.*;
 
 public class PromptView extends JFrame{
 
@@ -52,12 +52,12 @@ public class PromptView extends JFrame{
         queueButton = new JButton("Priority Queue");
         increaseKeyButton = new JButton("Increase Key");
 
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout());
-        buttonPanel.add(submitButton);
-        buttonPanel.add(sortButton);
-        buttonPanel.add(queueButton);
-        buttonPanel.add(increaseKeyButton);
+        JPanel buttonPanel = new ButtonPanelBuilder()
+                .addButton("Submit List", this::onSubmitClicked)
+                .addButton("Sort List", this::onSortClicked)
+                .addButton("Priority Queue", this::onQueueClicked)
+                .addButton("Increase Key", this::onIncreaseKeyClicked)
+                .build();
 
         add(buttonPanel, BorderLayout.SOUTH);
 
@@ -66,7 +66,8 @@ public class PromptView extends JFrame{
         queueButton.addActionListener(this::onQueueClicked);
         increaseKeyButton.addActionListener(this::onIncreaseKeyClicked);
     }
-        private void clearInputField() {
+
+    private void clearInputField() {
             textField.setText("");
         }
 
