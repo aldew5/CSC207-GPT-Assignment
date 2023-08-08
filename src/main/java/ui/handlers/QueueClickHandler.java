@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import main.java.datastructure.PriorityQueue;
 import main.java.ui.PromptView;
 import main.java.use_case.StoreInPriorityQueueUseCase;
+import main.java.util.AudioPlayer;
 
 public class QueueClickHandler implements ActionListener {
 
@@ -21,6 +22,7 @@ public class QueueClickHandler implements ActionListener {
         StoreInPriorityQueueUseCase queueUseCase = new StoreInPriorityQueueUseCase(priorityQueue);
         int[] inputArray = promptView.convertListToArray(promptView.getInputList());
         queueUseCase.storeInPriorityQueue(inputArray);
+        AudioPlayer.playAudio("src/main/assets/priority_sort.wav");
         promptView.showResults("Priority Queue (max heap) contents:", priorityQueue);
     }
 }

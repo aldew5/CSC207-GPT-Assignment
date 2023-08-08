@@ -5,8 +5,7 @@ import java.awt.event.ActionListener;
 
 import main.java.ui.PromptView;
 import main.java.use_case.IncreaseKeyUseCase;
-
-import javax.swing.*;
+import main.java.util.AudioPlayer;
 
 public class IncreaseKeyClickHandler implements ActionListener {
 
@@ -26,6 +25,7 @@ public class IncreaseKeyClickHandler implements ActionListener {
             increaseKeyUseCase.increaseKey(index, newValue);
 
             promptView.getInputList().set(index, newValue);
+            AudioPlayer.playAudio("src/main/assets/adjust.wav");
             promptView.showResults("Key increased at index " + index + " to " + newValue,
                     promptView.convertListToArray(promptView.getInputList()));
         } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {

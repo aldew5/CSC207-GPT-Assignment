@@ -1,6 +1,7 @@
 package main.java.ui.handlers;
 
 import main.java.ui.PromptView;
+import main.java.util.AudioPlayer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +31,7 @@ public class SubmitClickHandler implements ActionListener {
                     int number = Integer.parseInt(token.trim());
                     promptView.getInputList().add(number);
                     promptView.getPriorityQueue().enqueue(number);
+                    AudioPlayer.playAudio("src/main/assets/submit.wav");
                 } catch (NumberFormatException ex) {
                     promptView.showAlert("Invalid input", "Please enter a valid list of numbers or 'done' to submit.");
                     return;

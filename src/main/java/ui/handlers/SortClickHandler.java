@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import main.java.ui.PromptView;
 import main.java.use_case.SortInputUseCase;
+import main.java.util.AudioPlayer;
 
 public class SortClickHandler implements ActionListener {
 
@@ -19,6 +20,7 @@ public class SortClickHandler implements ActionListener {
         SortInputUseCase sortUseCase = new SortInputUseCase();
         int[] inputArray = promptView.convertListToArray(promptView.getInputList());
         inputArray = sortUseCase.sortInput(inputArray);
+        AudioPlayer.playAudio("src/main/assets/sort.wav");
         promptView.showResults("Sorted Array:", inputArray);
     }
 }
