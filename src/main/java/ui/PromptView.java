@@ -52,54 +52,20 @@ public class PromptView extends JFrame{
         queueButton = new JButton("Priority Queue");
         increaseKeyButton = new JButton("Increase Key");
 
+
         JPanel buttonPanel = new ButtonPanelBuilder()
-                .addButton("Submit List", this::onSubmitClicked)
-                .addButton("Sort List", this::onSortClicked)
-                .addButton("Priority Queue", this::onQueueClicked)
-                .addButton("Increase Key", this::onIncreaseKeyClicked)
+                .addButton("Submit List", new SubmitClickHandler(textField, this))
+                .addButton("Sort List", new SortClickHandler(this))
+                .addButton("Priority Queue", new QueueClickHandler(this))
+                .addButton("Increase Key", new IncreaseKeyClickHandler(this))
                 .build();
 
         add(buttonPanel, BorderLayout.SOUTH);
-
-        submitButton.addActionListener(this::onSubmitClicked);
-        sortButton.addActionListener(this::onSortClicked);
-        queueButton.addActionListener(this::onQueueClicked);
-        increaseKeyButton.addActionListener(this::onIncreaseKeyClicked);
     }
 
-    private void clearInputField() {
+    protected void clearInputField() {
             textField.setText("");
         }
-
-    private void onSubmitClicked(ActionEvent e) {
-        String inputText = textField.getText();
-        if (inputText.equalsIgnoreCase("done")) {
-            disableSubmitButton();
-            disableInputField();
-            enableSortButton();
-            enableQueueButton();
-        } else {
-            List<String> inputTokens = Arrays.asList(inputText.split(","));
-            for (String token : inputTokens) {
-                try {
-                    int number = Integer.parseInt(token.trim());
-                    inputList.add(number);
-                    priorityQueue.enqueue(number);
-                } catch (NumberFormatException ex) {
-                    showAlert("Invalid input", "Please enter a valid list of numbers or 'done' to submit.");
-                    return;
-                }
-            }
-            clearInputField();
-        }
-    }
-
-    private void onSortClicked(ActionEvent e) {
-        SortInputUseCase sortUseCase = new SortInputUseCase();
-        int[] inputArray = convertListToArray(inputList);
-        inputArray = sortUseCase.sortInput(inputArray);
-        showResults("Sorted Array:", inputArray);
-    }
 
     private void onQueueClicked(ActionEvent e) {
         PriorityQueue priorityQueue = new PriorityQueue(inputList.size());
@@ -109,7 +75,7 @@ public class PromptView extends JFrame{
         showResults("Priority Queue (max heap) contents:", priorityQueue);
     }
 
-    private int[] convertListToArray(List<Integer> list) {
+    protected int[] convertListToArray(List<Integer> list) {
         int[] arr = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             arr[i] = list.get(i);
@@ -117,27 +83,27 @@ public class PromptView extends JFrame{
         return arr;
     }
 
-    private void disableSubmitButton() {
+    protected void disableSubmitButton() {
         submitButton.setEnabled(false);
     }
 
-    private void disableInputField() {
+    protected void disableInputField() {
         textField.setEnabled(false);
     }
 
-    private void enableSortButton() {
+    protected void enableSortButton() {
         sortButton.setEnabled(true);
     }
 
-    private void enableQueueButton() {
+    protected void enableQueueButton() {
         queueButton.setEnabled(true);
     }
 
-    private void showAlert(String title, String message) {
+    protected void showAlert(String title, String message) {
         JOptionPane.showMessageDialog(this, message, title, JOptionPane.ERROR_MESSAGE);
     }
 
-    private void showResults(String title, int[] array) {
+    void showResults(String title, int[] array) {
         StringBuilder result = new StringBuilder(title + "\n");
         for (int num : array) {
             result.append(num).append(" ");
@@ -145,7 +111,7 @@ public class PromptView extends JFrame{
         JOptionPane.showMessageDialog(this, result.toString());
     }
 
-    private void showResults(String title, PriorityQueue priorityQueue) {
+    void showResults(String title, PriorityQueue priorityQueue) {
         StringBuilder result = new StringBuilder(title + "\n");
         while (!priorityQueue.isEmpty()) {
             result.append(priorityQueue.dequeue()).append(" ");
@@ -169,12 +135,12 @@ public class PromptView extends JFrame{
     }
 
 
-    private int promptIndex() {
+    protected int promptIndex() {
         String indexText = JOptionPane.showInputDialog(this, "Enter index to increase key:");
         return Integer.parseInt(indexText);
     }
 
-    private int promptNewValue() {
+    protected int promptNewValue() {
         String newValueText = JOptionPane.showInputDialog(this, "Enter new value:");
         return Integer.parseInt(newValueText);
     }
@@ -186,4 +152,15 @@ public class PromptView extends JFrame{
         setVisible(true);
     }
 
+    public List<Integer> getInputList() {
+        return inputList;
+    }
+
+    public PriorityQueue getPriorityQueue() {
+        return priorityQueue;
+    }
+
+    public MaxBinaryHeap getMaxBinaryHeap() {
+        return maxBinaryHeap;
+    }
 }
