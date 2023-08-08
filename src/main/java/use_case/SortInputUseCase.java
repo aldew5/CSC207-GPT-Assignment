@@ -12,7 +12,8 @@ public class SortInputUseCase {
      * @return The sorted array in ascending order.
      */
     public int[] sortInput(int[] inputArray) {
-        HeapSort.sort(inputArray);
+        HeapSort heap_sort = new HeapSort();
+        inputArray = heap_sort.sort(inputArray);
         return inputArray;
     }
 }

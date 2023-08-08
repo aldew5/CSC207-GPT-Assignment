@@ -1,13 +1,9 @@
 package main.java.datastructure;
 
-public class HeapSort {
+public class HeapSort implements SortingStrategy {
 
-    /**
-     * Sorts an array of integers in ascending order using the HeapSort algorithm.
-     *
-     * @param arr The array to be sorted.
-     */
-    public static void sort(int[] arr) {
+    @Override
+    public int[] sort(int[] arr) {
         int n = arr.length;
 
         // Build a max heap (heapify) from the array
@@ -25,6 +21,8 @@ public class HeapSort {
             // Call max heapify on the reduced heap
             heapify(arr, i, 0);
         }
+
+        return arr;
     }
 
     /**
@@ -34,7 +32,7 @@ public class HeapSort {
      * @param n     The size of the heap.
      * @param index The index of the root of the subtree to be heapified.
      */
-    private static void heapify(int[] arr, int n, int index) {
+    private void heapify(int[] arr, int n, int index) {
         int largest = index;
         int leftChild = 2 * index + 1;
         int rightChild = 2 * index + 2;
