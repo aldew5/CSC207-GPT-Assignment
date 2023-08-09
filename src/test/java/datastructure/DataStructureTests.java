@@ -1,9 +1,6 @@
 package datastructure;
 
 
-import main.java.datastructure.HeapSort;
-import main.java.datastructure.PriorityQueue;
-import main.java.datastructure.MaxBinaryHeap;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;

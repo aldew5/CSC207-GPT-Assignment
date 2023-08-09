@@ -1,7 +1,6 @@
 package use_case;
 
-import main.java.datastructure.MaxBinaryHeap;
-import main.java.use_case.IncreaseKeyUseCase;
+import datastructure.MaxBinaryHeap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

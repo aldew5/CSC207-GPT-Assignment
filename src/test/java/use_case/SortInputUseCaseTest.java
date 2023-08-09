@@ -1,7 +1,7 @@
 package use_case;
 
-import main.java.use_case.SortInputUseCase;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SortInputUseCaseTest {

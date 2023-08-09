@@ -33,7 +33,7 @@ public class QueueClickHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // Create a priority queue and use case
-        PriorityQueue priorityQueue = new PriorityQueue(promptView.getInputList().size());
+        PriorityQueue priorityQueue = new PriorityQueue(100);
         StoreInPriorityQueueUseCase queueUseCase = new StoreInPriorityQueueUseCase(priorityQueue);
 
         // Convert input list to array and store in the priority queue

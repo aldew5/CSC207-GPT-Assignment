@@ -1,10 +1,11 @@
 package use_case;
 
 
-import main.java.datastructure.PriorityQueue;
-import main.java.use_case.StoreInPriorityQueueUseCase;
+import datastructure.PriorityQueue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class StoreInPriorityQueueUseCaseTest {
 

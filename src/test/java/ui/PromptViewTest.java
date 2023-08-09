@@ -1,6 +1,5 @@
 package ui;
 
-import main.java.ui.PromptView;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
